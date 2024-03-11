@@ -1,11 +1,11 @@
 import tkinter as tk
 from tkinter.scrolledtext import ScrolledText
-
 import ttkbootstrap as ttk
 from ttkbootstrap import Style
 from ttkbootstrap.constants import *
 from tkinter import font, messagebox
 import random
+from secondary_window import SecondaryWindow
 from ttkthemes import ThemedTk
 
 # ---------------------------- CONSTANTS ------------------------------- #
@@ -178,6 +178,11 @@ def track_typing_letters(event):
 timer_seconds = 60
 
 
+def open_secondary_window():
+    secondary_window = SecondaryWindow()
+    return secondary_window
+
+
 def countdown_timer():
     global timer_seconds
     if timer_seconds > 0:
@@ -186,6 +191,8 @@ def countdown_timer():
         window.after(1000, countdown_timer)
     else:
         text_entry.config(state="disabled")
+        count_points()
+        open_secondary_window()
 
 
 # Funkcja wywołująca się przy wpisaniu pierwszej litery
@@ -194,6 +201,14 @@ def on_first_letter(event):
     if timer_seconds == 60:
         # Rozpocznij odliczanie czasu tylko jeśli timer nie jest już uruchomiony
         countdown_timer()
+
+
+def count_points():
+    global ALL_SIGN_COUNT, LETTER_COUNTER, SPACE_COUNT
+    raw_cmp = ALL_SIGN_COUNT
+    cmp = LETTER_COUNTER
+    wpm = round(cmp / 5)
+    print(f'raw CMP = {raw_cmp}, CMP = {cmp}, WPM = {wpm}')
 
 
 window = ttk.Window()
@@ -253,11 +268,11 @@ text_entry.bind('<FocusOut>', on_focusout)
 # -----------------------------TIMER WIDGET ---------------------------------------------------#
 
 meter = ttk.Meter(
-    metersize=200,
+    metersize=230,
     stepsize=1,
     amounttotal=60,
     arcrange=360,
-    padding=5,
+    padding=10,
     showtext=True,
     amountused=59,
     metertype="full",
@@ -267,7 +282,6 @@ meter = ttk.Meter(
     stripethickness=6
 )
 meter.step(-1)
-
-meter.grid(row=3, column=1)
+meter.grid(row=3, column=1, rowspan=2)
 
 window.mainloop()

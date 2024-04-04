@@ -26,7 +26,7 @@ try:
         file = f.readlines()
         list_of_words = [item.strip() for item in file]
 except FileNotFoundError:
-    print("The file '1000 words.txt' was not found.")
+    messagebox.showerror("The file '1000 words.txt' was not found.")
 
 # Check the uniqueness of words and remove duplicates if necessary
 if len(set(list_of_words)) != len(list_of_words):
@@ -213,8 +213,6 @@ def track_typing_letters(event):
         next_word = ""
 
     if not is_valid_key(event):
-        print(actual_char_position)
-        print(CURRENT_WORD)
         text_entry.insert(tk.END, text_entry.get())
         # Show a warning if an invalid key is pressed
         messagebox.showwarning("Invalid Key", "You can only use letters, space and BackSpace.")

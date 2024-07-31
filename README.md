@@ -38,7 +38,7 @@ pip install -r requirements.txt
 2. A list of randomly selected words from the 1000 most commonly used English words will be displayed.
 3. The timer starts automatically when you begin typing the first letter.
 
-![Start screen](./screen_shots/Zrzut ekranu 2024-04-04 142428.png)
+![Start screen](./screen_shots/Zrzut%20ekranu%202024-04-04%20142428.png)
 4. As you type:
 - Correctly typed letters will be highlighted in blue.
 - Incorrectly typed letters will be highlighted in red.

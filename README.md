@@ -45,14 +45,14 @@ pip install -r requirements.txt
 - The currently typed word will be highlighted in green.
 - You can correct errors in the current word using the backspace key, but you cannot go back to previous words.
 
-![Start timer](./screen_shots/Zrzut ekranu 2024-04-04 142736.png)
-![Error Message](./screen_shots/Zrzut ekranu 2024-04-04 142555.png)
+![Start timer](./screen_shots/Zrzut%20ekranu%202024-04-04%20142736.png)
+![Error Message](./screen_shots/Zrzut%20ekranu%202024-04-04%20142555.png)
 5. After 60 seconds, the program will end the test and display a new window with your results:
 - Typing speed in CPM and WPM
 - List of words with errors
 
-![End Message](./screen_shots/Zrzut ekranu 2024-04-04 142636.png)
-![List of mistakes](./screen_shots/Zrzut ekranu 2024-04-04 142816.png)
+![End Message](./screen_shots/Zrzut%20ekranu%202024-04-04%20142636.png)
+![List of mistakes](./screen_shots/Zrzut%20ekranu%202024-04-04%20142816.png)
 
 ## Issues and Contributions
 If you encounter any issues or have suggestions for improvements, feel free to open an issue or create a pull request.
